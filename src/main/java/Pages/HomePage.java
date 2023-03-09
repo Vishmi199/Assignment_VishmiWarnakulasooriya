@@ -79,8 +79,8 @@ public class HomePage {
     //Get email body
     public String getEmailBody(){
         WebDriverWait wait = new WebDriverWait(driver, 100);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(txtReceivedEmailBody));
         driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@title='Email content']")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(txtReceivedEmailBody));
         return driver.findElement(txtReceivedEmailBody).getText();
     }
     //Click on Sign in button
